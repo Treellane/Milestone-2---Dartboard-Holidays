@@ -41,13 +41,17 @@ In this section,
 
 ## Credits
 
+- API for Google Maps from Google.
+- Sample code for some of the map features taken from the Google Maps Platform tutorials at developers.google.com
+
 ###
 Content
 - Layout was designed by myself, David Kelly.
 
 ### Media
-- 'Green' World image downloaded from pngTree.com, author: https://pngtree.com/free-vectors.
-- Dart'image downloaded from pngTree.com, author: https://pngtree.com/free-vectors.
+- 'Green World Map' and 'Dart' image downloaded from pngTree.com, author: https://pngtree.com/free-vectors.
+   (These images were editted together by me)
+-
 
 ### 
 Acknowledgements

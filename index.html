@@ -14,7 +14,7 @@
 <!-- Link to Google fonts -->      
      <link href="https://fonts.googleapis.com/css?family=KoHo:300,400,500,600,700" rel="stylesheet">
      
-<!-- Link to FontAwesome -->     
+<!-- Link to FontAwesome - in case I need it!  -->     
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
       
      
@@ -44,23 +44,23 @@
     
     <section class="container-fluid">
         
-        <div class="col-xs-6 col-sm-6 co-md-6 col-lg-6 map-section">
-            <div id="googleMap" style="width: 500px; height: 500px"></div>
+        <div class="col-xs-12 col-sm-6 co-md-6 col-lg-6 map-section">
+            <div id="map" style="width: 100%; height: 500px;"></div>
         </div> 
         
-        <div class="button-area col-xs-5 col-sm-5 co-md-5 col-lg-5">
+        <div class="button-area col-xs-12 col-sm-6 co-md-6 col-lg-6">
             
-            <!-- Search input area to searching locations on the map -->
-            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    
-            
+            <!-- The input field for the map search -->
+            <input id="pac-input" class="controls" type="text" placeholder="Type in a destination...">
+          
             <!-- BUTTONS FOR THE MAPS FUNCTIONS-->
-            <button type="button" class="btn btn-primary">Accomidation</button>
-            <br>
+            
+          <button type="button" class="btn btn-primary">Accomidation</button>
+            
             <button type="button" class="btn btn-primary">Attractions</button>
-            <br>
+           
             <button type="button" class="btn btn-primary">Restaraunts</button>
-            <br>
+            
             <button type="button" class="btn btn-primary">Bars</button>
         </div>    
         
@@ -72,13 +72,14 @@
        </div>
            
     </footer>
-
-<!-- This script is the google maps api file -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmpC11fKlwAhu96xna72jb4IF5DcaWrqQ&callback=initMap" async defer></script>
  
-<!--script tag to log the maps.js file where all our javascript is that will load our google map -->
+ <!--script tag to log the maps.js file where all our javascript is that will load our google map -->
     <script src="js/maps.js"></script>
 
+<!-- NOT SURE IF THIS IS NEEDED - SEEMS TO CAUSE CONSOLE ERRORS! BUT GOOGLE TUTORIALS SAYS IT NEEDS TO BE HERE FOR THE AUTOCOMPLETE!!! --> 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmpC11fKlwAhu96xna72jb4IF5DcaWrqQ&libraries=places&callback=initAutocomplete"
+         async defer></script>
+ 
 
 </body>
 
