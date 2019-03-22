@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<!-- Links to external Bootstrap taken from BootStrapCDN.com -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+  
+<!-- Link to the Hover.CSS command library; link found at cdnjs.com -->  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
+     
+<!-- Link to Google fonts -->      
+     <link href="https://fonts.googleapis.com/css?family=KoHo:300,400,500,600,700" rel="stylesheet">
+     
+<!-- Link to FontAwesome -->     
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
+      
+     
+<!-- Link to our own main style sheet -->
+    <link rel="stylesheet" href="style.css" type="text/css" />        
+    
+    <title>Milestone Project 2 - Dartboard Holidays</title>
+    
+    
+</head>
+    
+<body>
+     <head class="conatiner-fluid">
+         <div class="head-box">
+             
+            <div class="head-box-logo col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <img src="images/WorldMapDart2.png" height=180px width=280 alt="Wolrd Map with Dart"></img>
+            </div>
+            
+            <div class="head-box-text col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                <h1>Dartboard Holidays</h1>
+                <h2>Find your prefect destination!</h2>
+            </div>
+            
+         </div>
+     </head>
+    
+    <section class="container-fluid">
+        
+        <div class="col-xs-6 col-sm-6 co-md-6 col-lg-6 map-section">
+            <div id="googleMap" style="width: 500px; height: 500px"></div>
+        </div> 
+        
+        <div class="button-area col-xs-5 col-sm-5 co-md-5 col-lg-5">
+            
+            <!-- Search input area to searching locations on the map -->
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+    
+            
+            <!-- BUTTONS FOR THE MAPS FUNCTIONS-->
+            <button type="button" class="btn btn-primary">Accomidation</button>
+            <br>
+            <button type="button" class="btn btn-primary">Attractions</button>
+            <br>
+            <button type="button" class="btn btn-primary">Restaraunts</button>
+            <br>
+            <button type="button" class="btn btn-primary">Bars</button>
+        </div>    
+        
+    </section>
+    
+    <footer class="conatiner-fluid">
+       <div class="foot-box">
+          <p>Dartboard Holidays by David Kelly</p> 
+       </div>
+           
+    </footer>
+
+<!-- This script is the google maps api file -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmpC11fKlwAhu96xna72jb4IF5DcaWrqQ&callback=initMap" async defer></script>
+ 
+<!--script tag to log the maps.js file where all our javascript is that will load our google map -->
+    <script src="js/maps.js"></script>
+
+
+</body>
+
+
+</html>

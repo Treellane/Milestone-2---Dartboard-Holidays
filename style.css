@@ -1,0 +1,107 @@
+/* website font: font-family: 'KoHo', sans-serif; */
+
+/*........................HEADER SECTION......................................*/
+.head-box {
+    height: 200px;
+    width: 100%;
+    background-color: green;
+    margin: 0px;
+    padding: 10px;
+}
+
+.head-box-logo {
+    margin: 0px;
+    padding: 0px;
+}
+
+.head-box-text h1 {
+    text-align: left;
+    padding: 0px;
+    text-decoration: none;
+    font-family: "KoHo", sans-serif;
+    font-weight: 500;
+    font-size: 60px;
+    height: 100px;
+    color: black;
+    display: block;
+}
+
+.head-box-text h2 {
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    font-family: "KoHo", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    height: 100px;
+    line-height: 0.3;
+    color: gray;
+    display: block;
+}
+
+/*........................SECTION SECTION......................................*/
+
+.map-section {
+    padding: 0;
+    margin: 0;
+}
+
+#googleMap {
+    padding: 0px;
+    margin: 0;
+    margin-bottom: 35px;
+    min-height: 350px;
+}
+
+/*-------------------------SECTION BUTTONS------------------------------------*/
+
+.button-area {
+    padding-left: 50px;    
+}
+
+.btn {
+    height: 40px;
+    width: 250px;
+    line-height: 0.9;
+    font-size: 13px;
+    color: white;             /* button text color */
+    background-color: #d55443;   /*button color*/
+    border: white;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
+.btn:hover {
+    color: white;
+    background-color: black;
+    border: black;
+}
+
+/*........................FOOTER SECTION......................................*/
+
+.foot-box {
+    height: 50px;
+    width: 100%;
+    background-color: green;
+    margin: 0px;
+    padding: 0px;
+}
+
+.foot-box p {
+    padding: 0px;
+    padding-right: 20px;
+    padding-top: 9px;
+    margin: 0px;
+    font-family: "KoHo", sans-serif;
+    color: gray;
+    font-size: 14px;
+    text-align: right;
+}
+
+
+/*-------------------------------MEDIA QUERIES--------------------------------*/
+
+
+
+
