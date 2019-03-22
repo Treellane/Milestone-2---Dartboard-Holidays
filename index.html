@@ -30,8 +30,10 @@
      <head class="conatiner-fluid">
          <div class="head-box">
              
-            <div class="head-box-logo col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                <img src="images/WorldMapDart2.png" height=180px width=280 alt="Wolrd Map with Dart"></img>
+            <div class="head-box-logo col-xs-4 col-sm-4 col-md-4 col-lg-4">    
+                <a href="index.html">
+                    <img src="images/WorldMapDart2.png" height=180px width=280 alt="Wolrd Map with Dart"></img>
+                </a>
             </div>
             
             <div class="head-box-text col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -48,21 +50,33 @@
             <div id="map" style="width: 100%; height: 500px;"></div>
         </div> 
         
-        <div class="button-area col-xs-12 col-sm-6 co-md-6 col-lg-6">
+        <div class="button-area col-xs-12 col-sm-4 co-md-4 col-lg-4">
             
             <!-- The input field for the map search -->
             <input id="pac-input" class="controls" type="text" placeholder="Type in a destination...">
           
+          
             <!-- BUTTONS FOR THE MAPS FUNCTIONS-->
-            
-          <button type="button" class="btn btn-primary">Accomidation</button>
-            
-            <button type="button" class="btn btn-primary">Attractions</button>
+            <div id="style-selector-control-1" class="col-xs-5 col-sm-5 co-md-5 col-lg-5 map-control">
+                   
+                    <input type="radio" name="show-hide" id="hide-poi" class="selector-control">
+                    <label for="hide-poi">Hide</label>
+                   
+                    <input type="radio" name="show-hide" id="show-poi" class="selector-control" checked="checked">
+                    <label for="show-poi">Show</label>  
+            </div>
+                    
+                    <div class="col-xs-6 col-sm-6 co-md-6 col-lg-6">
+                        <button type="button" class="btn btn-primary accom-btn">Attractions</button>
+                    </div>
            
-            <button type="button" class="btn btn-primary">Restaraunts</button>
             
-            <button type="button" class="btn btn-primary">Bars</button>
-        </div>    
+                <button type="button" class="btn btn-primary att-btn">Accommidation</button>
+               
+                <button type="button" class="btn btn-primary rest-btn">Restaraunts</button>
+                
+                <button type="button" class="btn btn-primary bar-btn">Bars</button>
+        </div>
         
     </section>
     
@@ -76,11 +90,10 @@
  <!--script tag to log the maps.js file where all our javascript is that will load our google map -->
     <script src="js/maps.js"></script>
 
-<!-- NOT SURE IF THIS IS NEEDED - SEEMS TO CAUSE CONSOLE ERRORS! BUT GOOGLE TUTORIALS SAYS IT NEEDS TO BE HERE FOR THE AUTOCOMPLETE!!! --> 
+<!-- script link gor Google API for map search AUTOCOMPLETE --> 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmpC11fKlwAhu96xna72jb4IF5DcaWrqQ&libraries=places&callback=initAutocomplete"
          async defer></script>
  
-
 </body>
 
 
