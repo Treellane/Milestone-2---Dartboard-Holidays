@@ -8,7 +8,7 @@
 <!-- Links to external Bootstrap taken from BootStrapCDN.com -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
   
-<!-- Link to the Hover.CSS command library; link found at cdnjs.com -->  
+<!-- Link to the Hover.CSS command library; link found at cdnjs.com, in case it is needed! -->  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
      
 <!-- Link to Google fonts -->      
@@ -47,36 +47,26 @@
     <section class="container-fluid">
         
         <div class="col-xs-12 col-sm-6 co-md-6 col-lg-6 map-section">
-            <div id="map" style="width: 100%; height: 500px;"></div>
+            <div id="map" style="width: 100%; height: 400px;"></div>
         </div> 
         
-        <div class="button-area col-xs-12 col-sm-4 co-md-4 col-lg-4">
+        <div class="col-xs-12 col-sm-4 co-md-4 col-lg-4">
             
             <!-- The input field for the map search -->
             <input id="pac-input" class="controls" type="text" placeholder="Type in a destination...">
           
           
             <!-- BUTTONS FOR THE MAPS FUNCTIONS-->
-            <div id="style-selector-control-1" class="col-xs-5 col-sm-5 co-md-5 col-lg-5 map-control">
-                   
-                    <input type="radio" name="show-hide" id="hide-poi" class="selector-control">
-                    <label for="hide-poi">Hide</label>
-                   
-                    <input type="radio" name="show-hide" id="show-poi" class="selector-control" checked="checked">
-                    <label for="show-poi">Show</label>  
-            </div>
-                    
-                    <div class="col-xs-6 col-sm-6 co-md-6 col-lg-6">
-                        <button type="button" class="btn btn-primary accom-btn">Attractions</button>
-                    </div>
-           
+            <div id="buttonDiv" class="col-xs-5 col-sm-5 co-md-5 col-lg-5">
             
-                <button type="button" class="btn btn-primary att-btn">Accommidation</button>
+                <button type="button" class="btn active btn-secondary">Attractions</button>
+                <button type="button" class="btn btn-secondary">Accomidation</button>
+                <button type="button" class="btn btn-secondary">Restaurents</button>
+                <button type="button" class="btn btn-secondary">Bars</button>
+            </div>
+              
+           
                
-                <button type="button" class="btn btn-primary rest-btn">Restaraunts</button>
-                
-                <button type="button" class="btn btn-primary bar-btn">Bars</button>
-        </div>
         
     </section>
     

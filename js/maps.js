@@ -4,7 +4,7 @@
 
 function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 47.8688, lng: -33.3242},
+          center: {lat: 47.0000, lng: 7.0000},
           zoom: 4,
           mapTypeId: 'roadmap'
         });
@@ -13,10 +13,7 @@ function initAutocomplete() {
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
       
-       // map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(input);  THIS LINE OF CODE SEEMS TO LOCATE THE 'SEARCH WINDOW' WITHIN
-                                                                              // THE MAP!!! WHICH I DONT WANT! BLOCKEING IT OUT APPEARS TO 
-                                                                              // MAKE MY SEARCH BAR APPEAR WHERE I WANT IT TO!!! 
-
+     
         // Bias the SearchBox results towards current map's viewport.
         map.addListener('bounds_changed', function() {
           searchBox.setBounds(map.getBounds());
@@ -70,40 +67,27 @@ function initAutocomplete() {
           });
           map.fitBounds(bounds);
         });
-      }
-      
+}
+/* ------------------SELECT/DESELECT ACTIVE BUTTON----------------------------*/
+
+// Add active class to the current button (highlight it)
+
+var btnDiv = document.getElementById("buttonDiv");
+
+var btns = btnDiv.getElementsByClassName("btn");
+
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+     
+     
+     
 /* ------------------SELECT/DESELECT MAP MAKRERS------------------------------*/
 
-// Add controls to the map, allowing users to hide/show features.
-  var styleControl = document.getElementById('style-selector-control-1');
- 
- push(styleControl);
- 
-  
-// Apply new JSON when the user chooses to hide/show features.
-        document.getElementById('hide-poi').addEventListener('click', function() {
-          map.setOptions({styles: style['hide']});
-        });
-        document.getElementById('show-poi').addEventListener('click', function() {
-          map.setOptions({styles: style['default']});
-        });
+
   
       
-var style = {
-        default: null,
-        hide: [
-          {
-            featureType: 'poi.attraction',
-            stylers: [{visibility: 'off'}]
-          },
-          {
-            featureType: 'poi.park',
-            stylers: [{visibility: 'off'}]
-          },
-          {
-            featureType: 'poi.place_of_worship',
-            stylers: [{visibility: 'off'}]
-          }
-        ]
-      };
-        

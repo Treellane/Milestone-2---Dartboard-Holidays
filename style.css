@@ -34,14 +34,13 @@
     font-family: "KoHo", sans-serif;
     font-weight: 300;
     font-size: 40px;
-    height: 100px;
+    height: 80px;
     line-height: 0.3;
     color: gray;
     display: block;
 }
 
 /*........................MAP SEARCH BAR SECTION...............................*/
-
 
       #description {
         font-family: 'KoHo', sans-serif;
@@ -113,35 +112,27 @@
 #map {
     padding: 0px;
     margin: 0;
-    min-height: 350px;
+    min-height: 300px;
 }
 
-/*-------------------------SECTION BUTTONS------------------------------------*/
-
-.button-area {
-    padding-left: 50px;    
-}
+/*-------------------------SELECTION BUTTONS-----------------------------------*/
 
 .btn {
-  
-    height: 60px;
-    width: 280px;
-    line-height: 0.9;
-    font-size: 13px;
-    color: white;             /* button text color */
-    background-color: #d55443;   /*button color*/
-    border: white;
-    margin-top: 10px;
-    margin-left: 0px;
-    margin-left: auto;
-    margin-right: auto; 
+  width: 200px;
+  height: 50px;
+  margin: 5px;
+  font-family: 'KoHo', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
 }
 
-.btn:hover {
-    color: white;
-    background-color: black;
-    border: black;
+/* Style the active class, and buttons on mouse-over */
+.active, .btn:hover {
+  background-color: #666;
+  color: white;
 }
+
 
 /*........................FOOTER SECTION......................................*/
 
@@ -150,7 +141,7 @@
     width: 100%;
     background-color: green;
     margin: 0px;
-    margin-top: 35px;
+    margin-top: 15px;
 }
 
 .foot-box p {
@@ -163,19 +154,6 @@
     font-size: 14px;
     text-align: right;
 }
-
-
-/*------------------------MAP CONTROLS----------------------------------------*/
-
-.map-control {
-        background-color: #fff;
-        border: 1px solid #ccc;
-        box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
-        font-family: 'KoHo','sans-serif';
-        margin: 15px;
-        padding: 5px;
-      }
-     
 
        
      
