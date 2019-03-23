@@ -36,7 +36,7 @@
     font-size: 40px;
     height: 80px;
     line-height: 0.3;
-    color: gray;
+    color: rgb(242, 242, 242);
     display: block;
 }
 
@@ -116,7 +116,16 @@
 }
 
 /*-------------------------SELECTION BUTTONS-----------------------------------*/
-
+.map-control {
+        background-color: #fff;
+        border: none;
+        font-family: 'KoHo', sans-serif;
+        margin: 10px;
+        padding: 10px;
+        font-size: 14px;
+        line-height: 30px;
+      }
+      
 .btn {
   width: 200px;
   height: 50px;
@@ -147,10 +156,10 @@
 .foot-box p {
     padding: 0px;
     padding-right: 20px;
-    padding-top: 9px;
+    padding-top: 15px;
     margin: 0px;
     font-family: "KoHo", sans-serif;
-    color: gray;
+    color: rgb(242, 242, 242);
     font-size: 14px;
     text-align: right;
 }
