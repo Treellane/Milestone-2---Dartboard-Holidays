@@ -2,114 +2,107 @@
 
 /* ----------GOOGLE AUTOCOMPLTE / SEARCH INPUT FOR MAP------------------------*/
 
-function initAutocomplete() {
+function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 47.0000, lng: 7.0000},
-          zoom: 4,
-          mapTypeId: 'roadmap'
+          center: {lat: -33.86, lng: 151.209},
+          //center: {lat: 47.0000, lng: 7.0000},
+          zoom: 13,
+          //zoom: 4,
         });
 
-        // Create the search box and link it to the UI element.
+   // Create the search box and link it to the UI element.
         var input = document.getElementById('pac-input');
-        var searchBox = new google.maps.places.SearchBox(input);
+
+        var box = document.getElementById('input-box');
       
-     
-        // Bias the SearchBox results towards current map's viewport.
-        map.addListener('bounds_changed', function() {
-          searchBox.setBounds(map.getBounds());
+        map.controls.push(box);
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+      // Bind the map's bounds (viewport) property to the autocomplete object,
+      // so that the autocomplete requests use the current map bounds for the
+      // bounds option in the request.
+        autocomplete.bindTo('bounds', map);
+
+      // Set the data fields to return when the user selects a place.
+        autocomplete.setFields(
+            ['address_components', 'geometry', 'icon', 'name']);
+
+var infowindow = new google.maps.InfoWindow();
+        var infowindowContent = document.getElementById('infowindow-content');
+        infowindow.setContent(infowindowContent);
+        var marker = new google.maps.Marker({
+          map: map,
+          anchorPoint: new google.maps.Point(0, -29)
         });
 
-        var markers = [];
-        // Listen for the event fired when the user selects a prediction and retrieve
-        // more details for that place.
-        searchBox.addListener('places_changed', function() {
-          var places = searchBox.getPlaces();
-
-          if (places.length == 0) {
+        autocomplete.addListener('place_changed', function() {
+          infowindow.close();
+          marker.setVisible(false);
+          var place = autocomplete.getPlace();
+          if (!place.geometry) {
+    // User entered the name of a Place that was not suggested and
+    // pressed the Enter key, or the Place Details request failed.
+            window.alert("No details available for input: '" + place.name + "'");
             return;
           }
 
-          // Clear out the old markers.
-          markers.forEach(function(marker) {
-            marker.setMap(null);
-          });
-          markers = [];
+    // If the place has a geometry, then present it on a map.
+          if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport);
+          } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(12);  // Why 12? Because it looks good.
+          }
+          marker.setPosition(place.geometry.location);
+          marker.setVisible(true);
 
-          // For each place, get the icon, name and location.
-          var bounds = new google.maps.LatLngBounds();
-          places.forEach(function(place) {
-            if (!place.geometry) {
-              console.log("Returned place contains no geometry");
-              return;
-            }
-            var icon = {
-              url: place.icon,
-              size: new google.maps.Size(71, 71),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(25, 25)
-            };
+          var address = '';
+          if (place.address_components) {
+            address = [
+              (place.address_components[0] && place.address_components[0].short_name || ''),
+              (place.address_components[1] && place.address_components[1].short_name || ''),
+              (place.address_components[2] && place.address_components[2].short_name || '')
+            ].join(' ');
+          }
 
-            // Create a marker for each place.
-            markers.push(new google.maps.Marker({
-              map: map,
-              icon: icon,
-              title: place.name,
-              position: place.geometry.location
-            }));
-
-            if (place.geometry.viewport) {
-              // Only geocodes have viewport.
-              bounds.union(place.geometry.viewport);
-            } else {
-              bounds.extend(place.geometry.location);
-            }
-          });
-          map.fitBounds(bounds);
+          infowindowContent.children['place-icon'].src = place.icon;
+          infowindowContent.children['place-name'].textContent = place.name;
+          infowindowContent.children['place-address'].textContent = address;
+          infowindow.open(map, marker);
         });
-}
-/* ------------------SELECT/DESELECT ACTIVE BUTTON----------------------------*/
 
-// Add active class to the current button (highlight it)
-
-var btnDiv = document.getElementById("buttonDiv");
-
-var btns = btnDiv.getElementsByClassName("btn");
-
-for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
-      var current = document.getElementsByClassName("active");
-      current[0].className = current[0].className.replace(" active", "");
-      this.className += " active";
-   
-    }
-    );
-}    
+     
+ 
 /* ------------------SELECT/DESELECT MAP MAKRERS------------------------------*/
 
-var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -33.86, lng: 151.209},
-          zoom: 13,
-          mapTypeControl: false
-        });
+//
+//  THIS SECTION DOESNT WORK WHEN AUOCOMPLTE DOES, and visa versa!!!
+//
+
+// var map;
+//      function initMap() {
+ //       map = new google.maps.Map(document.getElementById('map'), {
+ //         center: {lat: -33.86, lng: 151.209},
+ //         zoom: 13,
+ //         mapTypeControl: false
+ //       });
 
         // Add controls to the map, allowing users to hide/show features.
-        var buttonControl = document.getElementById('map-control');
-        map.controls.push(buttonControl);
+        var styleControl = document.getElementById('selector-section');
+        map.controls.push(styleControl);
 
 
         // Apply new JSON when the user chooses to hide/show features.
-        document.getElementById('hide-attract').addEventListener('click', function() {
-          map.setOptions({styles: attractStyle['hide']});
+        document.getElementById('hide-poi').addEventListener('click', function() {
+          map.setOptions({styles: style['hide']});
         });
-        document.getElementById('show-attract').addEventListener('click', function() {
-          map.setOptions({styles: attractStyle['show']});
+        document.getElementById('show-poi').addEventListener('click', function() {
+          map.setOptions({styles: style['show']});
         });
       }
 
-  var attractStyle = {
+  var style = {
        hide: [
           {
             featureType: 'poi.attraction',
@@ -146,3 +139,22 @@ var map;
         ]
       };
       
+
+
+/* ------------------SELECT/DESELECT FOR ACTIVE BUTTONS-----------------------*/
+
+// Add active class to the current button (highlight it)
+
+//var btnDiv = document.getElementById("buttonDiv");
+
+//var btns = btnDiv.getElementsByClassName("btn");
+
+//for (var i = 0; i < btns.length; i++) {
+//    btns[i].addEventListener("click", function() {
+//      var current = document.getElementsByClassName("active");
+//      current[0].className = current[0].className.replace(" active", "");
+//      this.className += " active";
+   
+//    }
+ //   );
+//}   

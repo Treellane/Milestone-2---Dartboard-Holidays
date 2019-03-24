@@ -47,9 +47,17 @@
         font-size: 20px;
         font-weight: 300;
       }
-
+      
       #infowindow-content .title {
-        font-weight: bolders;
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;       /*This should make this div invisable! as it does in the */
+      }                      /* Google example, but it is visable for me!!!!!!!!??????*/
+
+      #map #infowindow-content {
+        display: inline;
       }
 
       .pac-card {
