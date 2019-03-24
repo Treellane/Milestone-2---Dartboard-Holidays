@@ -33,9 +33,10 @@
 </head>
     
 <body>
-     <head class="conatiner-fluid">
-         <div class="head-box">
-             
+    
+    <header class="conatiner-fluid">
+        <div class="head-box">
+         
             <div class="head-box-logo col-xs-4 col-sm-4 col-md-4 col-lg-4">    
                 <a href="index.html">
                     <img src="images/WorldMapDart2.png" height=180px width=280 alt="Wolrd Map with Dart"></img>
@@ -47,12 +48,13 @@
                 <h2>...find your prefect destination!</h2>
             </div>
             
-         </div>
-     </head>
+        </div>
+     </header>
     
     <section class="container-fluid">
         
-        <div class="col-xs-12 col-sm-5 co-md-5 col-lg-5 map-section">
+        
+        <div class="map-section col-xs-12 col-sm-12 co-md-7 col-lg-7 ">
             <div id="map" style="width: 100%; height: 400px;">
                 
             </div>
@@ -62,28 +64,48 @@
                 </div>
         </div> 
         
-        <div class="input-box col-xs-12 col-ms-7 col-md-7 col-lg-7">
-        <!-- The input field for the map search -->
-            <input id="pac-input" class="controls" type="text" placeholder="Enter your destination...">
-        </div> 
-        
-        <div id="selector-section" class="col-xs-3 col-sm-5 co-md-5 col-lg-5">
+        <div class="buttton-section col-xs-12 col-sm-12 col-md-5 col-lg-5">
+         
+            <!-- The input field for the map search -->
+            <div id="input-box" class="col-xs-12 col-ms-12 col-md-12 col-lg-12">
+                <input id="pac-input" class="controls" type="text" placeholder="Enter your destination...">
+            </div> 
             
-            <input type="radio" name="show-hide" id="hide-poi">
-                  
-            <label for="hide-poi">Hide</label>
-              
-            <input type="radio" name="show-hide" id="show-poi" checked="checked">
              
-            <label for="show-poi">Show</label>
-              
-            <button type="button" class="btn active btn-secondary" id="btn-Attraction">Attractions</button>
-                
-        </div>
-      
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div id="attrations-selector">
+                    <input type="radio" name="show-hide-attractions" id="hide-poi" value="group-one">
+                    <label for="hide-poi">Hide</label>
+                  
+                    <input type="radio" name="show-hide-attractions" id="show-poi" value="group-one" checked="checked">
+                    <label for="show-poi">Show</label>
+                </div>
         
-              <!-- BUTTONS FOR THE MAPS FUNCTIONS-->
-       <!--     <div id="buttonDiv" class="col-xs-7 col-sm-2 co-md-2 col-lg-2">
+                <div id="restaurant-selector">
+                    <input type="radio" name="show-hide-restaurant" id="hide-restaurant" value="group-two">
+                    <label for="hide-restaurant">Hide</label>
+                  
+                    <input type="radio" name="show-hide-restaurant" id="show-restaurant" value="group-two" checked="checked">
+                    <label for="show-restaurant">Show</label>
+                </div>
+            
+            </div>
+            
+            
+           <div class="label-section col-xs-7 col-sm-7 col-md-7 col-lg-7"> 
+               <h3>Attractions</h3>
+               <h3>Restaurants</h3>
+               <h3>Bars</h3>
+           </div>
+            
+        </div>
+        
+           
+          
+            
+        
+        <!-- BUTTONS FOR THE MAPS FUNCTIONS-->
+        <!--     <div id="buttonDiv" class="col-xs-7 col-sm-2 co-md-2 col-lg-2">
             
             <button type="button" class="btn active btn-secondary" id="btn-Attraction">Attractions</button>
             <button type="button" class="btn btn-secondary" id="btn-Accomidation">Accommidation</button>
@@ -93,7 +115,6 @@
               
            
                
-        
     </section>
     
     <footer class="conatiner-fluid">

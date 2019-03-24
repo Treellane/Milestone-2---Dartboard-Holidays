@@ -4,7 +4,7 @@
 .head-box {
     height: 200px;
     width: 100%;
-    background-color: green;
+    background-color: #568336;
     margin: 0px;
     padding: 10px;
 }
@@ -14,7 +14,7 @@
     padding: 0px;
 }
 
-.head-box-text h1 {
+h1 {
     text-align: left;
     padding: 0px;
     text-decoration: none;
@@ -26,7 +26,7 @@
     display: block;
 }
 
-.head-box-text h2 {
+h2 {
     text-align: left;
     padding: 0px;
     margin: 0px;
@@ -40,114 +40,80 @@
     display: block;
 }
 
-/*........................MAP SEARCH BAR SECTION...............................*/
-
-      #description {
-        font-family: 'KoHo', sans-serif;
-        font-size: 20px;
-        font-weight: 300;
-      }
-      
-      #infowindow-content .title {
-        font-weight: bold;
-      }
-
-      #infowindow-content {
-        display: none;       /*This should make this div invisable! as it does in the */
-      }                      /* Google example, but it is visable for me!!!!!!!!??????*/
-
-      #map #infowindow-content {
-        display: inline;
-      }
-
-      .pac-card {
-        margin: 10px 10px 0 0;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        background-color: #fff;
-        font-family: 'KoHo', sans-serif;
-      }
-
-      #pac-container {
-        padding-bottom: 12px;
-        margin-right: 12px;
-      }
-
-      .pac-controls {
-        display: inline-block;
-        padding: 5px 11px;
-      }
-
-      .pac-controls label {
-        font-family: 'KoHo', sans-serif;
-        font-size: 13px;
-        font-weight: 300;
-      }
-
-      #pac-input {
-        background-color: yellow;
-        font-family: 'KoHo', sans-serif;
-        font-size: 20px;
-        font-weight: 300;
-        margin-bottom: 25px;
-        padding: 2px 11px 5px 13px;
-        text-overflow: ellipsis;
-        width: 500px;
-      }
-
-      #pac-input:focus {
-        border-color: #4d90fe;
-      }
-
-      #title {
-        color: #fff;
-        background-color: #4d90fe;
-        font-size: 25px;
-        font-weight: 500;
-        padding: 6px 12px;
-      }
-      #target {
-        width: 345px;
-      }
-
-
-
-/*........................MAP SECTION......................................*/
+/*...........................MAP SECTION......................................*/
 
 #map {
     padding: 0px;
-    margin: 0;
+    margin: 0px;
     min-height: 300px;
 }
 
-/*-------------------------SELECTION BUTTONS-----------------------------------*/
-.map-control {
-        background-color: #fff;
-        border: none;
-        font-family: 'KoHo', sans-serif;
-        margin: 10px;
-        padding: 10px;
-        font-size: 14px;
-        line-height: 30px;
-      }
-      
-.btn {
-  width: 200px;
-  height: 50px;
-  margin: 5px;
-  font-family: 'KoHo', sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  cursor: pointer;
+#infowindow-content .title {
+  font-weight: bold;
 }
 
-/* Style the active class, and buttons on mouse-over */
-.active, .btn:hover {
-  background-color: #666;
-  color: white;
+#infowindow-content {
+  display: none;
+                /*This should make this div invisable! as it does in the */
+}                /* Google example, but it is visable for me!!!!!!!!??????*/
+
+#map #infowindow-content {
+  display: inline;
+}
+
+
+/*....................... SEARCH BAR SECTION..................................*/
+
+#input-box {
+  padding: 0px;
+}
+
+#pac-input {
+    background-color: #f8e874bf;
+    font-family: 'KoHo', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 25px;
+    padding: 2px 11px 5px 13px;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+}
+
+/*-------------------------HIDE/ SHOW SECTION ---------------------------------*/
+
+#attrations-selector {
+  margin: 5px 0px 5px 15px;
+  padding: 10px;
+}
+
+#restaurant-selector {
+  margin: 5px 0px 5px 15px;
+  padding: 10px;
+}
+
+
+/*---------------------HIDE/ SHOW LABEL SECTION--------------------------------*/
+
+#label-section{
+  padding-left: 0px;
+}
+
+h3 {
+  font-family: 'KoHo', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 11px 0px 0px 0px;
+    padding: 0px;
+    text-align: center;
+    
+    border: 1px solid #f7e516;
+    border-radius: 15px;
+    background-color:#b3daf9;
+    color: #568336;
 }
 
 
@@ -156,7 +122,7 @@
 .foot-box {
     height: 50px;
     width: 100%;
-    background-color: green;
+    background-color: #568336;
     margin: 0px;
     margin-top: 15px;
 }

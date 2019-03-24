@@ -32,7 +32,7 @@ In this section,
 - examples of testing carried out
 
 ## Deployment
-- mockups of the site layout were made using Paintbrush (copies can be found in the wireframes folder.)
+- mockups of the site layout were made using Paintbrush (versions 1 and 2 can be found in the wireframes folder.)
 - From this the basic layout of the webpage was coded in Cloud9.
 - Following this, additional coding was added, including the API's needed to display the Google maps.
 - During this process, repeated contact was made with my Tutor to help with ideas and coding, and tokeep the project on track.
