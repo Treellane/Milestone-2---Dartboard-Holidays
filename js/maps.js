@@ -6,7 +6,7 @@ function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -33.86, lng: 151.209},
           //center: {lat: 47.0000, lng: 7.0000},
-          zoom: 13,
+          zoom: 14,
           //zoom: 4,
         });
 
@@ -52,7 +52,7 @@ var infowindow = new google.maps.InfoWindow();
             map.fitBounds(place.geometry.viewport);
           } else {
             map.setCenter(place.geometry.location);
-            map.setZoom(12);  // Why 12? Because it looks good.
+            map.setZoom(4);  
           }
           marker.setPosition(place.geometry.location);
           marker.setVisible(true);
@@ -72,104 +72,127 @@ var infowindow = new google.maps.InfoWindow();
           infowindow.open(map, marker);
         });
 
+} //closing bracket for the initMap funcction
+
      
  
 /* ------------------SELECT/DESELECT MAP MARKERS------------------------------*/
 
-// Add controls to the map, allowing users to hide/show features.
-        var attractionsAlert = document.getElementById('attrations-selector');
-        map.controls.push(attractionsAlert);
-    
-// Apply new JSON when the user chooses to hide/show features.
-        document.getElementById('hide-poi').addEventListener('click', function() {
-        map.setOptions({styles: styleAttraction['hideAttract']});
-        });      
-        document.getElementById('show-poi').addEventListener('click', function() {
-        map.setOptions({styles: styleAttraction['showAttract']});
-        });
-       
-       
-       var restaurantAlert = document.getElementById('restaurant-selector');
-        map.controls.push(restaurantAlert);  
-        
-        document.getElementById('hide-restaurant').addEventListener('click', function() {
-        map.setOptions({styles: styleRest['hideRest']});
-        });
-        document.getElementById('show-restaurant').addEventListener('click', function() {
-        map.setOptions({styles: styleRest['showRest']});
-        }); 
-        
-       
-        
-        
-        
-} //closing bracket for the initMap funcction
-
-/*variable to hide/show ATTRACTIONS on the map*/
-  var styleAttraction = {
-       hideAttract: [
-          {
-            featureType: 'poi.attraction',
-            elementType: 'labels.icon',
-            stylers: [{visibility: 'off'}]
-          },
-          {
-            featureType: 'poi.park',
-            elementType: 'labels.icon',
-            stylers: [{visibility: 'off'}]
-          },
-          {
-            featureType: 'poi.place_of_worship',
-            elementType: 'labels.icon',
-            stylers: [{visibility: 'off'}]
-          }
-        ],
-        showAttract: [
-          {
-            featureType: 'poi.attraction',
-            elementType: 'labels.icon',
-            stylers: [{visibility: 'on'}]
-          },
-          {
-            featureType: 'poi.park',
-            elementType: 'labels.icon',
-            stylers: [{visibility: 'on'}]
-          },
-          {
-            featureType: 'poi.place_of_worship',
-            elementType: 'labels.icon',
-            stylers: [{visibility: 'on'}]
-          }
-        ]
-      };
+      
+function showAccommidation() {
+ alert("Hello world!");
  
-
-      
-  var styleRest = {
-       hideRest: [
-          {
-            featureType: 'restaurant',
-            elementType: 'labels.icon',
-            stylers: [{visibility: 'off'}]
-          },
-          {
-            featureType: 'cafe',
-            elementType: 'labels.icon',
-            stylers: [{visibility: 'off'}]
+ var NewMapCenter = map.getCenter();
+  
+  var mapLat = NewMapCenter.lat(); 
+  var mapLng = NewMapCenter.lng();
+  
+  var map = new google.maps.Map(document.getElementById('map'), {
+          center: {mapLat, mapLng},
+          zoom: 3,
+        });
+  
+  var infoWindow;
+  infoWindow = new google.maps.InfoWindow();
+       
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          radius: 2000,
+          type: ['hotel']
+        }, callback);
+  
+  function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
           }
-        ],
-        showRest: [
-          {
-            featureType: 'restaurant',
-            elementType: 'labels.icon',
-            stylers: [{visibility: 'on'}]
-          },
-          {
-            featureType: 'cafe',
-            elementType: 'labels.icon',
-            stylers: [{visibility: 'on'}]
-          }
-        ]
-      };
-      
+        }
+      }
 
+      function createMarker(place) {
+       // var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infoWindow.setContent(place.name);
+          infoWindow.open(map, this);
+        });
+      }
+ 
+}    
+  
+
+
+
+function hideAttraction() { 
+  
+}
+
+function showBar() { 
+  
+}
+
+function hideBar() { 
+  
+}
+
+function showRestaurant() { 
+  
+}
+
+function hideRestaurant() { 
+  
+}
+
+function hideAccommidation() { 
+  
+}
+        
+
+function shwAccommidation() {
+  
+  var NewMapCenter = map.getCenter();
+  
+  var mapLat = NewMapCenter.lat(); 
+  var mapLng = NewMapCenter.lng();
+  
+  var map = new google.maps.Map(document.getElementById('map'), {
+          center: {mapLat, mapLng},
+          zoom: 3,
+        });
+  
+  var infoWindow;
+  
+  infoWindow = new google.maps.InfoWindow();
+       
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          radius: 2000,
+          type: ['hotel']
+        }, callback);
+  
+  function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: placeLoc
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+ 
+}    

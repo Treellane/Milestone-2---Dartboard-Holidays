@@ -73,20 +73,37 @@
             
              
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                
                 <div id="attrations-selector">
-                    <input type="radio" name="show-hide-attractions" id="hide-poi" value="group-one">
-                    <label for="hide-poi">Hide</label>
+                    <input type="radio" name="show-hide-attractions" id="hide-attractions" onclick="hideAttractions()" checked="checked">
+                    <label for="hide-attractions">Hide</label>
                   
-                    <input type="radio" name="show-hide-attractions" id="show-poi" value="group-one" checked="checked">
-                    <label for="show-poi">Show</label>
+                    <input type="radio" name="show-hide-attractions" id="show-attractions" onclick="showAttractions()">
+                    <label for="show-attractions">Show</label>
                 </div>
         
                 <div id="restaurant-selector">
-                    <input type="radio" name="show-hide-restaurant" id="hide-restaurant" value="group-two">
+                    <input type="radio" name="show-hide-restaurant" id="hide-restaurant" checked="checked">
                     <label for="hide-restaurant">Hide</label>
                   
-                    <input type="radio" name="show-hide-restaurant" id="show-restaurant" value="group-two" checked="checked">
+                    <input type="radio" name="show-hide-restaurant" id="show-restaurant">
                     <label for="show-restaurant">Show</label>
+                </div> 
+                
+                <div id="bar-selector">
+                    <input type="radio" name="show-hide-bar" id="hide-bar" onclick="hideBar()" checked="checked">
+                    <label for="hide-bar">Hide</label>
+                  
+                    <input type="radio" name="show-hide-bar" id="show-bar" onclick="showBar()" >
+                    <label for="show-bar">Show</label>
+                </div> 
+                
+                <div id="accommidation-selector">
+                    <input type="radio" name="show-hide-accommidation" id="hide-accommidation" onclick="hideAccommidation()" checked="checked">
+                    <label for="hide-accommidation">Hide</label>
+                  
+                    <input type="radio" name="show-hide-accommidation" id="show-accommidation" onclick="showAccommidation()" >
+                    <label for="show-accommidation">Show</label>
                 </div>
             
             </div>
@@ -95,26 +112,12 @@
            <div class="label-section col-xs-7 col-sm-7 col-md-7 col-lg-7"> 
                <h3>Attractions</h3>
                <h3>Restaurants</h3>
-               <h3>Bars</h3>
+               <h3>Bars/Clubs</h3>
+               <h3>Accommodation</h3>
            </div>
             
         </div>
-        
-           
-          
-            
-        
-        <!-- BUTTONS FOR THE MAPS FUNCTIONS-->
-        <!--     <div id="buttonDiv" class="col-xs-7 col-sm-2 co-md-2 col-lg-2">
-            
-            <button type="button" class="btn active btn-secondary" id="btn-Attraction">Attractions</button>
-            <button type="button" class="btn btn-secondary" id="btn-Accomidation">Accommidation</button>
-            <button type="button" class="btn btn-secondary" id="btn-Restaurent">Restaurents</button>
-            <button type="button" class="btn btn-secondary" id="btn-Bar">Bars</button>
-        </div> -->
-              
-           
-               
+             
     </section>
     
     <footer class="conatiner-fluid">
@@ -129,10 +132,10 @@
     <script src="js/maps.js"></script>
 
 
-<!-- script link gor Google API for map search AUTOCOMPLETE --> 
-<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmpC11fKlwAhu96xna72jb4IF5DcaWrqQ&libraries=places&callback=initAutocomplete" async defer></script>
--->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmpC11fKlwAhu96xna72jb4IF5DcaWrqQ&libraries=places&callback=initMap"async defer></script>
+<!-- script link gor Google API for map search --> 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmpC11fKlwAhu96xna72jb4IF5DcaWrqQ&libraries=places&callback=initMap" async defer></script>
+   
+
 </body>
 
 
