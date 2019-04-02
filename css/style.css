@@ -69,6 +69,7 @@ h2 {
 }
 
 #pac-input {
+    margin-top: 13px;
     background-color: #f8e874bf;
     font-family: 'KoHo', sans-serif;
     font-size: 20px;
@@ -76,11 +77,11 @@ h2 {
     margin-bottom: 25px;
     padding: 2px 11px 5px 13px;
     text-overflow: ellipsis;
-    width: 100%;
+    width: 500px;
 }
 
 #pac-input:focus {
-    border-color: #4d90fe;
+    border-color: black;
 }
 
 /*-------------------------HIDE/ SHOW SECTION ---------------------------------*/
@@ -152,7 +153,6 @@ h3 {
      
 
 /*-------------------------------MEDIA QUERIES--------------------------------*/
-
 
 
 
