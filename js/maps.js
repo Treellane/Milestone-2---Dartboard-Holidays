@@ -1,4 +1,6 @@
 
+var map;
+var markers = [];
 
 /*---GOOGLE AUTOCOMPLTE / SEARCH INPUTtaken from Google Maps Paltform---------*/
 
@@ -69,7 +71,8 @@ function initAutocomplete() {
           });
           map.fitBounds(bounds);
         });
-        
+  
+  
 }  // closing bracket of initAutocomplete function
   
      
@@ -77,7 +80,7 @@ function initAutocomplete() {
 /* ------------------SELECT/DESELECT MAP MARKERS------------------------------*/
 
       
-function showAccommidation() {    alert("Test to see is funtion is entered!");
+  function showAttractions() {    alert("Test to see is funtion is entered!");
     
       
   // Getting the co-ords for the center of the map to use at a
@@ -92,6 +95,8 @@ function showAccommidation() {    alert("Test to see is funtion is entered!");
  //         zoom: 4,
   //      });
   
+  
+  
   // searching for HOTELS within a radius of 1000  
       var infoWindow;
       infoWindow = new google.maps.InfoWindow();
@@ -100,7 +105,7 @@ function showAccommidation() {    alert("Test to see is funtion is entered!");
           service.nearbySearch({
             location: location,
             radius: 1000,
-            type: ['hotel']
+            type: ['poi']
           }, callback);
     
     //plotting the results on the map
@@ -128,18 +133,22 @@ function showAccommidation() {    alert("Test to see is funtion is entered!");
   
   
   
+  function hideAttractions() { 
+    
+  }
+   
+  function showAccommidation(){
+    
+  } 
+  
   function hideAccommidation() { 
     
   }
-    
   
-  function hideAttraction() { 
-    
+  function showBar() {
+  
   }
   
-  function showBar() { 
-    
-  }
   
   function hideBar() { 
     
@@ -154,4 +163,4 @@ function showAccommidation() {    alert("Test to see is funtion is entered!");
   }
   
         
-  
+        
