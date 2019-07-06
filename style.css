@@ -1,0 +1,158 @@
+/* website font: font-family: 'KoHo', sans-serif; */
+
+/*........................HEADER SECTION......................................*/
+.head-box {
+    height: 200px;
+    width: 100%;
+    background-color: #568336;
+    margin: 0px;
+    padding: 10px;
+}
+
+.head-box-logo {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    text-align: left;
+    padding: 0px;
+    text-decoration: none;
+    font-family: "KoHo", sans-serif;
+    font-weight: 500;
+    font-size: 60px;
+    height: 100px;
+    color: black;
+    display: block;
+}
+
+h2 {
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    font-family: "KoHo", sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    height: 80px;
+    line-height: 0.3;
+    color: rgb(242, 242, 242);
+    display: block;
+}
+
+/*...........................MAP SECTION......................................*/
+
+#map {
+    padding: 0px;
+    margin: 0px;
+    min-height: 300px;
+}
+
+#infowindow-content .title {
+  font-weight: bold;
+}
+
+#infowindow-content {
+  display: none;
+                /*This should make this div invisable! as it does in the */
+}                /* Google example, but it is visable for me!!!!!!!!??????*/
+
+#map #infowindow-content {
+  display: inline;
+}
+
+
+/*....................... SEARCH BAR SECTION..................................*/
+
+#input-box {
+  padding: 0px;
+}
+
+#pac-input {
+    margin-top: 13px;
+    background-color: #f8e874bf;
+    font-family: 'KoHo', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 25px;
+    padding: 2px 11px 5px 13px;
+    text-overflow: ellipsis;
+    width: 500px;
+}
+
+#pac-input:focus {
+    border-color: black;
+}
+
+/*-------------------------HIDE/ SHOW SECTION ---------------------------------*/
+
+#museum-selector {
+  margin: 6px 0px 5px 15px;
+  padding: 10px;
+}
+
+#restaurant-selector {
+  margin: 5px 0px 5px 15px;
+  padding: 10px;
+}
+
+#bar-selector {
+  margin: 5px 0px 5px 15px;
+  padding: 10px;
+}
+
+#accommidation-selector {
+  margin: 5px 0px 5px 15px;
+  padding: 10px;
+}
+
+
+/*---------------------HIDE/ SHOW LABEL SECTION--------------------------------*/
+
+#label-section{
+  padding-left: 0px;
+}
+
+h3 {
+  font-family: 'KoHo', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 11px 0px 0px 0px;
+    padding: 0px;
+    text-align: center;
+    
+    border: 1px solid #f7e516;
+    border-radius: 15px;
+    background-color:#b3daf9;
+    color: #568336;
+}
+
+
+/*........................FOOTER SECTION......................................*/
+
+.foot-box {
+    height: 50px;
+    width: 100%;
+    background-color: #568336;
+    margin: 0px;
+    margin-top: 15px;
+}
+
+.foot-box p {
+    padding: 0px;
+    padding-right: 20px;
+    padding-top: 15px;
+    margin: 0px;
+    font-family: "KoHo", sans-serif;
+    color: rgb(242, 242, 242);
+    font-size: 14px;
+    text-align: right;
+}
+
+       
+     
+
+/*-------------------------------MEDIA QUERIES--------------------------------*/
+
+
+
