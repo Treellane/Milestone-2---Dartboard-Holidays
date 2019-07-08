@@ -63,11 +63,11 @@ function initAutocomplete() {
       }));
      
      //THIS LINE IS PASSING THE CURRENT VIEWPORT LAT AND LNG TO THE FUNCTION!!!
-      showMuseum(place.geometry.location.lat(),place.geometry.location.lng());
-      showRestaurant(place.geometry.location.lat(),place.geometry.location.lng())
-      showAccommidation(place.geometry.location.lat(),place.geometry.location.lng())
-      showBar(place.geometry.location.lat(),place.geometry.location.lng())
-      
+ //     showMuseum(place.geometry.location.lat(),place.geometry.location.lng());
+ //     showRestaurant(place.geometry.location.lat(),place.geometry.location.lng())
+ //     showAccommidation(place.geometry.location.lat(),place.geometry.location.lng())
+ //     showBar(place.geometry.location.lat(),place.geometry.location.lng())
+        
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
@@ -93,7 +93,7 @@ document.getElementById("show-restaurant").addEventListener("click", showRestaur
 
 
   function showMuseum(currentLat,currentLng) { 
-
+/*
     var showLat = currentLat;
     var showLng = currentLng;
 
@@ -113,25 +113,27 @@ document.getElementById("show-restaurant").addEventListener("click", showRestaur
    
    fetch(proxyUrl + targetUrl)
     .then((res) => res.json())
-    .then((data) => {
+    .then((data) => 
+    {
        
       console.log(data.results)
-  //  console.log(data.results[0].geometry.location)
+      console.log(data.results[0].geometry.location)
 
-    for ( var i = 0; i < data.results.length; i++ )
-			{ 
-        var currentPosition = new google.maps.LatLng(data.results[i].geometry.location.lat,data.results[i].geometry.location.lng);
-  
-        console.log (data.results[i].geometry.location.lat,data.results[i].geometry.location.lng);
-      
-        var marker = new google.maps.Marker({
-          position:  currentPosition,
-          map: map,
-          animation: google.maps.Animation.DROP
-        });
-       
+      for ( var i = 0; i < data.results.length; i++ )
+      { 
+          var currentPosition = {lat: data.results[i].geometry.location.lat, lng: data.results[i].geometry.location.lng};
+    
+         //console.log (data.results[i].geometry.location.lat,data.results[i].geometry.location.lng);
+        
+          var marker = new google.maps.Marker({
+         //position: {currentPositionLat,currentPositionLng},
+         //position: {lat: place.data.results[i].geometry.location.lat, lng: place.data.results[i].geometry.location.lng},
+            position:  currentPosition,
+            map: map 
+          }); 
       }
     });
+*/
   }
   
 // nothing to see below this point, yet
@@ -140,9 +142,54 @@ document.getElementById("show-restaurant").addEventListener("click", showRestaur
 
   function hideMuseum() { }
    
+  
+  function showAccommidation(currentLat,currentLng) {
+    var search = {
+      bounds: map.getBounds(),
+      types: ['lodging']
+    };
 
-  function showAccommidation(currentLat,currentLng){
-    console.log(currentLat +" "+ currentLng);
+    places.nearbySearch(search, function(results, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        clearResults();
+        clearMarkers();
+       
+        // Create a marker for each hotel found, and assign a letter of the alphabetic to each marker icon.
+       
+        for (var i = 0; i < results.length; i++) {
+          var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+          var markerIcon = MARKER_PATH + markerLetter + '.png';
+        
+          // Use marker animation to drop the icons incrementally on the map.
+        
+          markers[i] = new google.maps.Marker({
+            position: results[i].geometry.location,
+            animation: google.maps.Animation.DROP,
+            icon: markerIcon
+          });
+        
+          // If the user clicks a hotel marker, show the details of that hote in an info window.
+        
+          markers[i].placeResult = results[i];
+          google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+          setTimeout(dropMarker(i), i * 100);
+          addResult(results[i], i);
+        }
+      }
+    });
+  
+
+  function clearMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+      if (markers[i]) {
+        markers[i].setMap(null);
+      }
+    }
+    markers = [];
+  }
+
+
+
   }
       
 
