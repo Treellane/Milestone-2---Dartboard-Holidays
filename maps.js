@@ -142,8 +142,8 @@ document.getElementById("show-restaurant").addEventListener("click", showRestaur
 
   function hideMuseum() { }
    
-  
-  function showAccommidation(currentLat,currentLng) {
+
+  function showAccommidation() {
     var search = {
       bounds: map.getBounds(),
       types: ['lodging']
